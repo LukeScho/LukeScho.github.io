@@ -1,0 +1,303 @@
+<!-- index.html -->
+    <!DOCTYPE html>
+    <html>
+    <html ng-app='portfolioApp'>
+    <head>
+      <!-- load bootstrap and fontawesome via CDN -->
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+      <!-- CSS
+    ================================================== -->
+    <!-- Fontawesome Icon font -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Twitter Bootstrap css -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- jquery.fancybox  -->
+        <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <!-- animate -->
+        <link rel="stylesheet" href="css/animate.css">
+    <!-- Main Stylesheet -->
+        <link rel="stylesheet" href="css/main.css">
+    <!-- media-queries -->
+        <link rel="stylesheet" href="css/media-queries.css">
+
+
+      <!-- load angular and angular route via CDN -->
+      <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+      <script src="js/jquery.singlePageNav.min.js"></script>
+      <script src="js/jquery.mixitup.min.js"></script>
+      <script src="js/jquery.fancybox.pack.js"></script>
+      <script src="js/jquery.parallax-1.1.3.js"></script>
+      <script src="js/jquery.appear.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+      <script src="js/portfolio.controller.js"></script>
+  </head>
+   <body ng-controller="Portfolio">
+    <div ng-view></div>
+    <!--
+        Fixed Navigation
+        ==================================== -->
+        <header id="navigation" class="navbar-fixed-top navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- responsive nav button -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-bars fa-2x"></i>
+                    </button>
+          <!-- /responsive nav button -->
+
+          <!-- logo -->
+                    <a class="navbar-brand" href="#body">
+            <h1 id="logo">
+              <!-- <img src="img/image.png" alt="NameHere"> -->
+            </h1>
+          </a>
+          <!-- /logo -->
+                </div>
+
+        <!-- main nav -->
+                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                    <ul id="nav" class="nav navbar-nav">
+                        <li class="current"><a href="#body" ng-click="clickedHome()"> Home </a></li>
+                        <li><a href="#aboutme" ng-click="clickedAboutMe()">About Me</a></li>
+                        <li><a href="#resume" ng-click="clickedResume()">Resume</a></li>
+                        <li><a href="#projects" ng-click="clickedProjects()">Projects</a></li>
+                    </ul>
+                </nav>
+        <!-- /main nav -->
+
+            </div>
+        </header>
+        <!--
+        End Fixed Navigation
+        ==================================== -->
+
+        <!--
+        Home Slider
+        ==================================== -->
+    <div ng-show="isHome">
+    <section id="slider">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators bullet -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        </ol>
+        <!-- End Indicators bullet -->
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+
+          <!-- single slide -->
+          <div class="item active" style="background-color: grey;">
+            <div class="carousel-caption" style="padding-top: 0px;">
+              <h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">Nice to meet you,<span> I'm {{ name }}!</span></h2>
+              <h3 data-wow-duration="1000ms" class="wow slideInLeft animated"><span class="color"> {{ universityMajor }}</span> {{ passion }}</h3>
+              <p data-wow-duration="1000ms" class="wow slideInRight animated">Thanks for checking me out!</p>
+            </div>
+          </div>
+          <!-- end single slide -->
+
+          <!-- single slide -->
+          <div class="item" style="background-color: grey;">
+            <div class="carousel-caption" style="padding-top: 0px;">
+              <h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">Nice to meet you,<span> I'm {{ name }}!</span></h2>
+              <h3 data-wow-duration="500ms" class="wow slideInLeft animated"><span class="color"> {{ universityMajor }}</span> {{ passion }}</h3>
+              <p data-wow-duration="500ms" class="wow slideInRight animated">Thanks for checking me out!</p>
+            </div>
+          </div>
+          <!-- end single slide -->
+
+        </div>
+        <!-- End Wrapper for slides -->
+
+      </div>
+    </section>
+
+        <!--
+        End Home SliderEnd
+        ==================================== -->
+
+    <!--
+        Me Section
+        ==================================== -->
+
+    <section id="features" class="features">
+      <div class="container">
+        <div class="row" style="margin-top: 20px; margin-bottom: 25px;">
+
+          <div class="sec-title text-center mb50 wow bounceInDown animated" data-wow-duration="500ms">
+            <h2>Me In A Nutshell</h2>
+            <div class="devider"><i class="fa fa-lg"></i></div>
+          </div>
+
+          <!-- me section -->
+          <div class="col-md-4 wow fadeInLeft" data-wow-duration="500ms">
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="fa fa-pencil fa-2x"></i>
+              </div>
+
+              <div class="service-desc">
+                <h3>Education</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+              </div>
+            </div>
+          </div>
+          <!-- end me section -->
+
+          <!-- me section -->
+          <div class="col-md-4 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms">
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="fa fa-bullhorn fa-2x"></i>
+              </div>
+
+              <div class="service-desc">
+                <h3>Extracurriculars</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+              </div>
+            </div>
+          </div>
+          <!-- end me section -->
+
+          <!-- me section -->
+          <div class="col-md-4 wow fadeInRight" data-wow-duration="500ms"  data-wow-delay="900ms">
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="fa fa-github fa-2x"></i>
+              </div>
+
+              <div class="service-desc">
+                <h3>Projects</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+              </div>
+            </div>
+          </div>
+          <!-- end me section -->
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+        <!--
+        End Mini-Me
+        ==================================== -->
+    <div ng-show="isAboutMe" style="margin-top: 20px; margin-bottom: 25px;">
+      <section id="aboutme" class="aboutme">
+      <div class="container">
+        <div class="row" style="margin-top: 80px; margin-bottom: 25px;">
+
+          <div class="sec-title text-center wow fadeInUp animated" data-wow-duration="700ms">
+            <h2>Meet Me</h2>
+            <div class="devider"><i class="fa fa-lg"></i></div>
+          </div>
+
+          <div class="sec-sub-title text-center wow fadeInRight animated" data-wow-duration="500ms">
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+          </div>
+
+          <!-- me -->
+          <figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
+            <div class="member-thumb">
+              <img src="puppy.jpg" alt="Me" class="img-responsive">
+              <figcaption class="overlay">
+                <h5>voluptatem quia voluptas </h5>
+                <p>sit aspernatur aut odit aut fugit,</p>
+                <ul class="social-links text-center">
+                  <li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
+                  <li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+                  <li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
+                </ul>
+              </figcaption>
+            </div>
+
+            <h4>Lisa Campbell</h4>
+            <span>CS Student</span>
+          </figure>
+          <!-- end about me -->
+
+        </div>
+      </div>
+    </div>
+    </section>
+    </div>
+
+    <div ng-show="isResume" style="margin-top: 20px; margin-bottom: 25px;">
+      <section id="resume" class="resume">
+      <div class="container">
+        <div class="row" style="margin-top: 80px; margin-bottom: 25px;">
+
+          <div class="sec-title text-center wow fadeInUp animated" data-wow-duration="700ms">
+            <h2>Resume</h2>
+            <div class="devider"><i class="fa fa-lg"></i></div>
+          </div>
+
+          <div class="sec-sub-title text-center wow fadeInRight animated" data-wow-duration="500ms">
+            <p>Hello!  Thanks for taking so much time out of your day to actually view my resume!  Since you are so kind as to view my resume, I thought I'd do the same by giving you two options to see my resume below:</p>
+            <div style="margin-top: 50px;">
+              <button class="btn" ng-click="showLink()">Click for Download Link</button> <button class="btn" ng-click="showResume()">Click to View Below</button>
+            </div>
+            <div ng-if="showResumePic">
+              <img src="resumetemplate.png">
+            </div>
+            <div ng-if="showResumeLink">
+              <p> Resume Link Below: </p>
+              <a class="btn btn-link" href="https://drive.google.com/file/d/0Bzns0vDyd9oHXzVYcWsxRUE4eVU/view?usp=sharing"> Link </a>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    </section>
+    </div>
+	
+	<div ng-show="isProjects">
+    <section id="slider">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators bullet -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        </ol>
+        <!-- End Indicators bullet -->
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+
+          <!-- single slide -->
+          <div class="item active" style="background-color: grey;">
+            <div class="carousel-caption" style="padding-top: 0px;">
+              <h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">Nice to meet you,<span> I'm {{ name }}!</span></h2>
+              <h3 data-wow-duration="1000ms" class="wow slideInLeft animated"><span class="color"> {{ universityMajor }}</span> {{ passion }}</h3>
+              <p data-wow-duration="1000ms" class="wow slideInRight animated">Thanks for bkjxdfofhvsdijchecking me out!</p>
+            </div>
+          </div>
+          <!-- end single slide -->
+
+          <!-- single slide -->
+          <div class="item" style="background-color: grey;">
+            <div class="carousel-caption" style="padding-top: 0px;">
+              <h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">Nice to meet you,<span> I'm {{ name }}!</span></h2>
+              <h3 data-wow-duration="500ms" class="wow slideInLeft animated"><span class="color"> {{ universityMajor }}</span> {{ passion }}</h3>
+              <p data-wow-duration="500ms" class="wow slideInRight animated">Thanks for chfafgagfkjafsagkjecking me out!</p>
+            </div>
+          </div>
+          <!-- end single slide -->
+
+        </div>
+        <!-- End Wrapper for slides -->
+
+      </div>
+    </section>
+
+    </body>
+    </html>
